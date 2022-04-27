@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+<struts>  
+<package name="a" extends="struts-default">  
+  
+<action name="verify" class="login.LoginAction">  
+	<result name="success">/success.jsp</result>  
+	<result name="usernameError">/usernameError.jsp</result>  
+	<result name="mobileError">/mobileError.jsp</result> 
+	<result name="emailError">/emailError.jsp</result> 
+</action>  
+  
+</package>  
+</struts>   
