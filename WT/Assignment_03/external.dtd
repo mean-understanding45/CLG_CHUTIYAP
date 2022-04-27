@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE department [
+        <!ELEMENT department (heading|container)*>
+        <!ELEMENT heading (#PCDATA)>
+        <!ELEMENT container (Record)*>
+        <!ELEMENT Record (data)*>
+        <!ELEMENT data (data-header|data-cell)*>
+        <!ELEMENT data-header (#PCDATA)>
+        <!ELEMENT data-cell (#PCDATA)>
+        ]>

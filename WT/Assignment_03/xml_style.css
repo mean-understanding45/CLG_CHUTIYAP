@@ -1,0 +1,54 @@
+heading {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: darkblue;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(96, 111, 238);
+}
+
+container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 90vh;
+    min-width: 100vw;
+}
+
+
+
+department {
+    background-color: rgb(100, 153, 184);
+}
+
+
+Record { 
+    display:table; 
+    font-size:14px; 
+    margin:8px; 
+    width: 80%;
+    background-color: rgb(100, 153, 184);
+    margin-top: -100px;
+
+} 
+data{ 
+    display:table-row; 
+    text-align:center; 
+    border: 2px solid black; 
+    padding:10px; 
+    
+    line-height: 30px;
+    font-size: 25px;
+    background-color: rgb(100, 153, 184);; 
+} 
+data-cell,data-header { 
+    display: table-cell; 
+    border: solid 1px; 
+    width: 25%;
+   
+}
+data-header{
+    background-color: rgb(100, 101, 184) ;
+    font-weight: 600;
+}

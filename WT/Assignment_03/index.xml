@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- css extension -->
+<?xml-stylesheet href="xml_style.css" type="text/css"?>
+
+<!-- <!DOCTYPE department SYSTEM "external.dtd"> -->
+
+<department>
+
+    <heading>XML System Pvt. Ltd</heading>
+    <container>
+        <Record>
+
+            <data>
+                <data-header> Employee ID </data-header>
+                <data-header> Employee Name </data-header>
+                <data-header> Job Name </data-header>
+                <data-header> salary </data-header>
+            </data>
+
+            <data>
+                <data-cell> 68319 </data-cell>
+                <data-cell> KAYLING </data-cell>
+                <data-cell> GM </data-cell>
+                <data-cell> 90000 </data-cell>
+            </data>
+
+            <data>
+                <data-cell> 66928 </data-cell>
+                <data-cell> Jenny </data-cell>
+                <data-cell> MANAGER </data-cell>
+                <data-cell> 80000 </data-cell>
+            </data>
+
+            <data>
+                <data-cell> 67832 </data-cell>
+                <data-cell> CLARE </data-cell>
+                <data-cell> MANAGER </data-cell>
+                <data-cell> 78000 </data-cell>
+            </data>
+
+            <data>
+                <data-cell> 67858 </data-cell>
+                <data-cell> SCARLET </data-cell>
+                <data-cell> ANALYST </data-cell>
+                <data-cell> 65646 </data-cell>
+            </data>
+
+            <data>
+                <data-cell> 63679 </data-cell>
+                <data-cell> SANDRINE </data-cell>
+                <data-cell> CLERK </data-cell>
+                <data-cell> 15000 </data-cell>
+            </data>
+
+        </Record>
+    </container>
+</department>
