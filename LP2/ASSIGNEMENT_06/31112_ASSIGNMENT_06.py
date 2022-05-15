@@ -1,88 +1,72 @@
-from nltk.chat.util import Chat, reflections
+THRESHOLD = {
+    'Mild': 30,
+    'Severe': 50,
+    'Extreme': 75
+}
 
-pairs = [
-    [
-        r"my name is (.*)",
-        ["Hello %1, How are you today ?",]
-    ],
-     [
-        r"what is your name ?",
-        ["My name is Chatty and I'm a chatbot ?",]
-    ],
-    [
-        r"how are you ?",
-        ["I'm doing good\nHow about You ?",]
-    ],
-    [
-        r"sorry (.*)",
-        ["Its alright","Its OK, never mind",]
-    ],
-    [
-        r"i'm (.*) doing good",
-        ["Nice to hear that","Alright :)",]
-    ],
-    [
-        r"hi|hey|hello",
-        ["Hello", "Hey there",]
-    ],
-    [
-        r"(.*) age?",
-        ["I'm a computer program dude\nSeriously you are asking me this?",]
 
-    ],
-    [
-        r"what (.*) want ?",
-        ["Make me an offer I can't refuse",]
+def expertSystem(questions, threshold):
 
-    ],
-    [
-        r"(.*) created ?",
-        ["Vedant created me using Python's NLTK library ","top secret ;)",]
-    ],
-    [
-        r"(.*) (location|city) ?",
-        ['Chennai, Tamil Nadu',]
-    ],
-    [
-        r"how is weather in (.*)?",
-        ["Weather in %1 is awesome like always","Too hot man here in %1","Too cold man here in %1","Never even heard about %1"]
-    ],
-    [
-        r"i work in (.*)?",
-        ["%1 is an Amazing company, I have heard about it. But they are in huge loss these days.",]
-    ],
+    score = 0
 
-[
-        r"(.*)raining in (.*)",
-        ["No rain since last week here in %2","Damn its raining too much here in %2"]
-    ],
-    [
-        r"how (.*) health(.*)",
-        ["I'm a computer program, so I'm always healthy ",]
-    ],
-    [
-        r"(.*) (sports|game) ?",
-        ["I'm a very big fan of Football",]
-    ],
-    [
-        r"who (.*) sportsperson ?",
-        ["Messy","Ronaldo","Roony"]
-],
-    [
-        r"who (.*) (moviestar|actor)?",
-        ["Brad Pitt"]
-],
-    [
-        r"quit",
-        ["BBye take care. See you soon :) ","It was nice talking to you. See you soon :)"]
+    for question in questions:
+        print(question+" (Y/N) ")
+        ans = input("> ")
+        if ans.lower() == 'y':
+            print('On a scale of 1-10 how bad is it ?')
+            ip = input('> ')
+            while((not ip.isnumeric()) or int(ip) < 1 or int(ip) > 10):
+                print('Enter a valid input !')
+                ip = input('> ')
+            score += int(ip)
 
-],
-]
+    print()
+    print()
 
-def chatty():
-    print("Hi, I'm Chatty and I chat alot ;)\nPlease type lowercase English language to start a conversation. Type quit to leave ") #default message at the start
-    chat = Chat(pairs, reflections)
-    chat.converse()
+    if score >= threshold['Extreme']:
+        print("You are showing symptoms of having EXTREME COVID-19")
+        print("Please call +91 8112233445 immediately to immediate assistance")
+        print("Based on your symptoms, You will need Immediate Hospitalization")
 
+    elif score >= threshold['Severe']:
+        print("Based on your answers You are showing Symptoms of SEVERE COVID-19")
+        print("You are advised to contact a COVID-19 Specialist ASAP")
+        print("You are prescribed with Favipriavir, Dolo 650 / Crocin 500, Paracetamol, Brufane")
+        print("Also coduct a COVID-19 Lab Test ASAP at your own convenience as this might be a false Positive")
+        print()
+        print()
+        print("Lab Testing: https://www.metropolisindia.com/parameter/pune/covid-19-rt-pcr-test")
+
+    elif score >= threshold['Mild']:
+        print("Based on your answers You are showing Symptoms of VERY MILD COVID-19")
+        print("Please Isolate yourself Immediately on a precautionary basis")
+        print("As this has a possibility of being a false positive , please consider testing yourself")
+        print("At home testing using Self-Testing kits is recommended , but you can get Lab Tests as well")
+        print()
+        print()
+        print("Self testing : https://www.flipkart.com/mylab-coviself-covid-19-rapid-antigen-test-kit/p/itm4d34ea09cad97")
+        print("Lab Testing  : https://www.metropolisindia.com/parameter/pune/covid-19-rt-pcr-test")
+
+    else:
+        print("You are Showing NO Symptoms of COVID-19")
+        print("This might be a false negative, If you feel unsure , please get Tested")
+        print("As this has a possibility of being a false negative , please consider testing yourself")
+        print("At home testing using Self-Testing kits is recommended")
+        print()
+        print()
+        print("Self testing : https://www.flipkart.com/mylab-coviself-covid-19-rapid-antigen-test-kit/p/itm4d34ea09cad97")
+
+    print()
+    print()
+    print("For any further queries visit : https://www.aarogyasetu.gov.in/")
+    print()
+    print()
+
+
+if '__main__' == __name__:
+
+    print("\n\n\t\tWelcome To The COVID-19 EXPERT SYSTEM\n")
+    print("\tNote : Please answer the following questions very honestly\n\n")
+    expertSystem(QUESTIONS, THRESHOLD)
 if __name__ == "__main__":
     chatty()
